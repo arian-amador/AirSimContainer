@@ -24,7 +24,7 @@ In order to share the hosts XServer with the container use the following flags.
  - --env="DISPLAY"
 
 In order to share the hosts network stack with the container use the following flag.
---net=host
+ - --net=host
 
 ```
 $] sudo docker run -i -i --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" thomasquintana/unity3d-airsim:latest
