@@ -27,5 +27,5 @@ In order to share the host's network stack with the container use the following 
  - --net=host
 
 ```
-$] sudo docker run -i -i --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" thomasquintana/unity3d-airsim:latest
+$] sudo docker run -i -t --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" thomasquintana/unity3d-airsim:latest
 ```
