@@ -8,6 +8,7 @@ RUN apt install -y gconf-service \
                    git-core \
                    lib32gcc1 \
                    lib32stdc++6 \
+                   libarchive-dev \
                    libasound2 \
                    libboost-all-dev \
                    libc6-i386 \
@@ -26,6 +27,7 @@ RUN apt install -y gconf-service \
                    libnss3 \
                    libpango1.0-0 \
                    libpq5 \
+                   libsoup2.4-dev \
                    libx11-6 \
                    libxcomposite1 \
                    libxcursor1 \
@@ -45,20 +47,18 @@ RUN apt install -y gconf-service \
 
 # Install Unity Editor
 WORKDIR /tmp
-RUN wget http://beta.unity3d.com/download/fd37f3680b5f/unity-editor_amd64-2017.2.0b11.deb
-RUN dpkg -i unity-editor_amd64-2017.2.0b11.deb
-RUN rm unity-editor_amd64-2017.2.0b11.deb
+RUN wget https://beta.unity3d.com/download/6e9a27477296/UnitySetup-2018.3.0f2
+RUN chmod +x UnitySetup-2018.3.0f2
+RUN yes | ./UnitySetup-2018.3.0f2 --unattended --download-location=/tmp --install-location /opt/Unity -v
+RUN rm -rf /tmp/*
 
 # Install AirSim
-WORKDIR /usr/src
+WORKDIR /root
 RUN git clone https://github.com/arian-amador/AirSim.git
 WORKDIR AirSim
 RUN ./setup.sh && ./build.sh
 WORKDIR Unity
 RUN ./build.sh
-
-# Set the working directiory to the root's home directory.
-WORKDIR /root
 
 # Start Unity3D
 CMD /opt/Unity/Editor/Unity
