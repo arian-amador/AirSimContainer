@@ -18,12 +18,12 @@ $] sudo docker build -t thomasquintana/unity3d-airsim:latest AirSimContainer
 
 For a GUI Application to run, an XServer is needed which is not available inside the container.
 
-In order to share the hosts XServer with the container use the following flags.
+In order to share the host's XServer with the container use the following flags.
 
  - --volume="$HOME/.Xauthority:/root/.Xauthority:rw"
  - --env="DISPLAY"
 
-In order to share the hosts network stack with the container use the following flag.
+In order to share the host's network stack with the container use the following flag.
  - --net=host
 
 ```
