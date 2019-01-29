@@ -23,6 +23,7 @@ RUN apt install -y gconf-service \
                    libgl1-mesa-glx \
                    libglu1 \
                    libgtk2.0-0 \
+                   libgtk2.0-dev \
                    libnspr4 \
                    libnss3 \
                    libpango1.0-0 \
