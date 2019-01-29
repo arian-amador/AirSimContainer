@@ -3,6 +3,8 @@ AirSim Container
 
 A Linux container running Unity3D & AirSim.
 
+*Note: nvidia-docker2 is required to run this container.*
+
 # Building the Unity3D Docker Container
 
 Building the container will take a while.
