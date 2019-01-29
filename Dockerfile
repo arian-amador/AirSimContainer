@@ -49,9 +49,9 @@ RUN apt install -y gconf-service \
 
 # Install Unity Editor
 WORKDIR /tmp
-RUN wget https://beta.unity3d.com/download/6e9a27477296/UnitySetup-2018.3.0f2
-RUN chmod +x UnitySetup-2018.3.0f2
-RUN yes | ./UnitySetup-2018.3.0f2 --unattended --download-location=/tmp --install-location /opt/Unity -v
+RUN wget https://beta.unity3d.com/download/dad990bf2728/UnitySetup-2018.2.7f1
+RUN chmod +x UnitySetup-2018.2.7f1
+RUN yes | ./UnitySetup-2018.2.7f1 --unattended --download-location=/tmp --install-location /opt/Unity -v
 RUN rm -rf /tmp/*
 
 # Install AirSim
