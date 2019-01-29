@@ -24,6 +24,7 @@ RUN apt install -y gconf-service \
                    libglu1 \
                    libgtk2.0-0 \
                    libgtk2.0-dev \
+                   libgtk-3-dev \
                    libnspr4 \
                    libnss3 \
                    libpango1.0-0 \
